@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
-    const [user, setUser]= useState(null);
+    const [user, setUser]= useState(true);
 
     const navigate = useNavigate();
   return (
@@ -16,7 +16,17 @@ const Navbar = () => {
         <div>
             {
             user ? 
-            <div></div>
+            <div>
+              <button>
+                <img className='w-5' src={assets.credit_star} alt="" />
+                <p>Credits left: 50</p>
+              </button>
+              <p>Hi, User</p>
+              <div className='relative group'> 
+              <img className='w-10 drop-shadow' src={assets.user} alt="" />
+              <div className='absolute hidden group-hover:block top-0 right-0 z-10 text-black rounded pt-12'> </div>
+              </div>
+            </div>
             :
             <div className='flex items-center gap-2 sm: gap-5'>
                 <p onClick={()=>navigate('/buy')}
