@@ -59,23 +59,23 @@ export const testimonialsData = [
     {
         image:profile_img_1,
         name:'Donald Jackman',
-        role:'Graphic Designer',
+        role:'Content Creator',
         stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        text:`Since switching to Pixify, I’ve seen a noticeable improvement in my content quality and consistency. It is like having a social media assistant in my pocket!`
     },
     {
         image:profile_img_2,
         name:'Richard Nelson',
-        role:'Content Creator',
-        stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        role:'Educator',
+        stars:4,
+        text:`This app has added a new dimension to my teaching materials. I can generate custom visuals to explain concepts more clearly. It’s incredibly useful in the classroom.`
     },
     {
         image:profile_img_1,
-        name:'Donald Jackman',
-        role:' Graphic Designer',
+        name:' Jake Watson',
+        role:'Graphic designer',
         stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        text:`Pixify helps me turn rough ideas into visual drafts in seconds, which is incredibly useful when working with clients or building mood boards. Just love using it.`
     },
 ]
 
