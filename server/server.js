@@ -13,15 +13,6 @@ app.use(cors());
 await connectDB();
 
 
-app.post('/test', (req, res) => {
-  console.log('Test route hit!');
-  console.log('Headers:', req.headers);
-  console.log('Body:', req.body);
-
-  res.json({ success: true, message: "Test route working!" });
-});
-
-
 app.use('/api/user', userRouter);
 app.get('/', (req, res) => 
     res.send('API working fine'));
