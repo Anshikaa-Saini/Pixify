@@ -1,5 +1,5 @@
 import axios from "axios";
-import userModel from "../models/userModel";
+import userModel from "../models/userModel.js";
 import FormData from 'form-data';
 
 export const generateImage = async (req, res) => {
@@ -35,3 +35,4 @@ export const generateImage = async (req, res) => {
         console.log(error.message)
         res.json({ success: false, message: error.message })
     }
+}
