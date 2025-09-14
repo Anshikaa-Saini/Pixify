@@ -14,7 +14,7 @@ const AppContextProvider = (props) => {
 
     const loadCreditsData = async () => {
         try {
-            const {data} = await axios.get(backendUrl + '/api/user/credits', {
+            const {data} = await axios.post(backendUrl + '/api/user/credits', { userId }, {
                 headers: {
                     token
                 }
@@ -30,6 +30,12 @@ const AppContextProvider = (props) => {
         }
     }
 
+    const logout = () => {
+        localStorage.removeItem("token");
+        setToken('')
+        setUser(null);
+    }
+
         useEffect (()=> {
             if(token) {
                 loadCreditsData()
@@ -37,7 +43,7 @@ const AppContextProvider = (props) => {
         }, [token])
 
     const value = {
-        user, setUser, showLogin, setShowLogin, backendUrl, token, setToken, credit, setCredit, loadCreditsData
+        user, setUser, showLogin, setShowLogin, backendUrl, token, setToken, credit, setCredit, loadCreditsData, logout
     }
     return (
         <AppContext.Provider value ={value}>
