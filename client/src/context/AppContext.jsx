@@ -8,20 +8,20 @@ const AppContextProvider = (props) => {
     const [user, setUser]= useState(false);
     const [showLogin, setShowLogin] = useState(false);
     const [token, setToken] = useState(localStorage.getItem("token"));
-    const [credit, setCredit] = useState(false);
+    const [credit, setCredit] = useState(null);
 
     const backendUrl = import.meta.env.VITE_BACKEND_URL
 
     const loadCreditsData = async () => {
         try {
-            const {data} = await axios.post(backendUrl + '/api/user/credits', { userId }, {
+            const {data} = await axios.get(backendUrl + '/api/user/credits', {
                 headers: {
                     token
                 }
             });
             if(data.success) {
-                setCredit(data.credits)
-                setUser(data.user)
+                setCredit(data.credits);     
+                setUser(data.user);
             }
         } 
         catch (error) {
@@ -33,7 +33,9 @@ const AppContextProvider = (props) => {
     const logout = () => {
         localStorage.removeItem("token");
         setToken('')
-        setUser(null);
+        setUser(false);
+        setCredit(false);
+        toast.success("Logged out successfully")
     }
 
         useEffect (()=> {
