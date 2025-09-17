@@ -10,9 +10,6 @@ const Navbar = () => {
 
     const navigate = useNavigate();
 
-    console.log("Navbar - user:", user);
-console.log("Navbar - credit:", credit);
-
 
   return (
     <div className='flex items-center justify-between py-4'>

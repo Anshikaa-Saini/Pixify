@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 const Login = () => {
 
     const [state, setState] = useState('Login');
-    const {setShowLogin, backendUrl, setToken, setUser } = useContext(AppContext);
+    const {setShowLogin, backendUrl, setToken, setUser, loadCreditsData } = useContext(AppContext);
 
     const[name, setName] = useState('');
     const[email, setEmail] = useState('');
@@ -24,6 +24,7 @@ const Login = () => {
             setToken(data.token);
             setUser(data.user)
             localStorage.setItem('token', data.token);
+            await loadCreditsData();
             setShowLogin(false);
           } else {
             toast.error(data.message)
@@ -34,6 +35,7 @@ const Login = () => {
             setToken(data.token);
             setUser(data.user)
             localStorage.setItem('token', data.token);
+            await loadCreditsData(); 
             setShowLogin(false);
           } else {
             toast.error(data.message)
@@ -41,7 +43,7 @@ const Login = () => {
         }
 
       } catch (error) {
-        toast.error(data.message)
+        toast.error(error.message)
       }
     }
 

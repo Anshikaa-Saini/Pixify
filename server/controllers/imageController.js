@@ -4,7 +4,10 @@ import FormData from 'form-data';
 
 export const generateImage = async (req, res) => {
     try {
-        const {userId, prompt } = req.body;
+        // const {userId, prompt } = req.userId;
+        const userId = req.userId;
+        const { prompt } = req.body;
+
         const user = await userModel.findById(userId);
 
         if(!user || !prompt) {
